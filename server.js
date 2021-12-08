@@ -12,7 +12,7 @@ app.use(express.static("public"));
 
 // http://localhost:3001/api/notes
 // app.use("/api", apiRoutes);
-app.use(apiRoutes);
+app.use("/api", apiRoutes);
 app.use("/", htmlRoutes);
 
 app.listen(PORT, () => {
