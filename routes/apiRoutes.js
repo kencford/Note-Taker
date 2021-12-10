@@ -8,7 +8,8 @@ router.get("/notes", (req, res) => {
     return res.json(dbFile);
 });
 
-// posting a note
+
+// posting existing notes in db.json into browser
 router.post("/notes", (req, res) => {
 
     const note = {
@@ -27,7 +28,7 @@ router.post("/notes", (req, res) => {
     return res.json(dbFile);
 });
 
-// delete a note}
+// removing selected note from list and writing new list back to json.db
 router.delete("/notes/:id", (req, res) => {
     let notesLeft = dbFile.filter((note) => {
         return (note.id != req.params.id)
